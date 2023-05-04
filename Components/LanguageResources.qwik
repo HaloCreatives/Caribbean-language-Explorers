@@ -1,0 +1,76 @@
+import { Component, QRL } from 'qwik';
+
+const LanguageResourcesCSS = QRL`./styles/language-resources.scss`;
+const SrananTongoPhrasebookPDF = QRL`../assets/pdf/sranan-tongo-phrasebook.pdf`;
+const SrananTongoDictionaryPDF = QRL`../assets/pdf/sranan-tongo-dictionary.pdf`;
+const PatoisVocabularyPDF = QRL`../assets/pdf/patois-vocabulary.pdf`;
+const CreoleLanguageResourcesURL = 'https://www.creoleinstitute.com/';
+
+const languageResources = [
+  {
+    language: 'Sranan Tongo',
+    resources: [
+      {
+        name: 'Sranan Tongo Phrasebook (PDF)',
+        link: SrananTongoPhrasebookPDF,
+      },
+      {
+        name: 'Sranan Tongo Dictionary (PDF)',
+        link: SrananTongoDictionaryPDF,
+      },
+      {
+        name: 'Sranan Tongo Language Learning Thread (Reddit)',
+        link: 'https://www.reddit.com/r/Sranan/',
+      },
+    ],
+  },
+  {
+    language: 'Patois',
+    resources: [
+      {
+        name: 'Patois Vocabulary (PDF)',
+        link: PatoisVocabularyPDF,
+      },
+      {
+        name: 'Patois Language Learning Thread (Reddit)',
+        link: 'https://www.reddit.com/r/patois/',
+      },
+    ],
+  },
+  {
+    language: 'Creole',
+    resources: [
+      {
+        name: 'Creole Language Resources (Website)',
+        link: CreoleLanguageResourcesURL,
+      },
+    ],
+  },
+];
+
+export class LanguageResources extends Component {
+  render() {
+    return (
+      <div className={LanguageResourcesCSS}>
+        <h2>Learning Materials</h2>
+        {languageResources.map((language, index) => (
+          <section className="language-section" key={index}>
+            <h3>{language.language}</h3>
+            <div className="language-resources">
+              {language.resources.map((resource, index) => (
+                <a
+                  key={index}
+                  href={resource.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {resource.name}
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    );
+  }
+}
