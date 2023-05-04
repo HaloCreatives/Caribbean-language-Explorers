@@ -1,0 +1,72 @@
+import { Component, QRL } from 'qwik';
+
+const ActivitiesCSS = QRL`./styles/activities.scss`;
+
+export class Activities extends Component {
+  constructor() {
+    super();
+    this.state = {
+      gameScore: 0,
+      songPlaying: false,
+    };
+  }
+
+  handleGameClick = () => {
+    // Logic for game click event
+    this.setState((prevState) => ({
+      gameScore: prevState.gameScore + 1,
+    }));
+  };
+
+  handleSongClick = () => {
+    // Logic for song click event
+    this.setState((prevState) => ({
+      songPlaying: !prevState.songPlaying,
+    }));
+  };
+
+  render() {
+    return (
+      <div class={ActivitiesCSS}>
+        <h2>Activities</h2>
+        <section class="game-section">
+          <h3>Game</h3>
+          <div class="game-container">
+            <button onClick={this.handleGameClick}>Click to score</button>
+            <p>Score: {this.state.gameScore}</p>
+          </div>
+        </section>
+        <section class="song-section">
+          <h3>Song</h3>
+          <div class="song-container">
+            <button onClick={this.handleSongClick}>
+              {this.state.songPlaying ? 'Stop Song' : 'Play Song'}
+            </button>
+            {this.state.songPlaying && (
+              <audio src="song.mp3" controls autoplay />
+            )}
+          </div>
+        </section>
+        <section class="quiz-section">
+          <h3>Quiz</h3>
+          <div class="quiz-container">
+            <p>Question 1: What is the capital city of Haiti?</p>
+            <ul>
+              <li>Port-au-Prince</li>
+              <li>Santo Domingo</li>
+              <li>Kingston</li>
+            </ul>
+          </div>
+        </section>
+        <section class="story-section">
+          <h3>Story</h3>
+          <div class="story-container">
+            <p>Read the story about Haitian culture and traditions</p>
+            <button>Read Story</button>
+          </div>
+        </section>
+        {/* Add more activity sections as needed */}
+      </div>
+    );
+  }
+}
