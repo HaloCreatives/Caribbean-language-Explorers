@@ -1,0 +1,55 @@
+import { Component, QRL, Link } from 'qwik';
+
+const FooterCSS = QRL`./styles/footer.scss`;
+
+const socialLinks = [
+  {
+    id: 'twitter',
+    iconClass: 'fa fa-twitter',
+    url: 'https://twitter.com/',
+  },
+  {
+    id: 'facebook',
+    iconClass: 'fa fa-facebook',
+    url: 'https://www.facebook.com/',
+  },
+  {
+    id: 'instagram',
+    iconClass: 'fa fa-instagram',
+    url: 'https://www.instagram.com/',
+  },
+  // Add more social media links as needed
+];
+
+export class Footer extends Component {
+  render() {
+    return (
+      <footer className={FooterCSS}>
+        <nav>
+          <ul className="social-links">
+            {socialLinks.map(({ id, iconClass, url }) => (
+              <li key={id}>
+                <a href={url} target="_blank">
+                  <i className={iconClass}></i>
+                </a>
+              </li>
+            ))}
+          </ul>
+          {/* Add more navigation links as needed */}
+          <ul className="footer-links">
+            <li>
+              <Link href="/about">About Us</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <Link href="/privacy">Privacy Policy</Link>
+            </li>
+            {/* Add more relevant links as needed */}
+          </ul>
+        </nav>
+      </footer>
+    );
+  }
+}
