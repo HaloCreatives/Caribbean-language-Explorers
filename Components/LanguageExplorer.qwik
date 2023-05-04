@@ -1,0 +1,26 @@
+import { Component, QRL } from 'qwik';
+import { Header } from './Header.qwik';
+import { SignUpForm } from './SignUpForm.qwik';
+import { LanguageSelection } from './LanguageSelection.qwik';
+import { LanguageResources } from './LanguageResources.qwik';
+import { Activities } from './Activities.qwik';
+import { Footer } from './Footer.qwik';
+
+import './styles/main.scss';
+
+export default class LanguageExplorer extends Component {
+  render() {
+    return (
+      <div className="app-container">
+        <Header />
+        <main>
+          <SignUpForm />
+          <LanguageSelection />
+          <LanguageResources />
+          <Activities />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+}
