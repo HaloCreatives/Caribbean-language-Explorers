@@ -1,0 +1,33 @@
+import { QRL, Component } from 'qwik';
+import headerStyles from './styles/header.module.scss';
+import logoSVG from '../assets/images/logo.svg';
+
+const NAV_LINKS = [
+  { title: 'Home', href: '#' },
+  { title: 'About', href: '#' },
+  { title: 'Languages', href: '#' },
+  { title: 'Activities', href: '#' },
+  { title: 'Resources', href: '#' },
+  { title: 'Contact', href: '#' },
+];
+
+export class Header extends Component {
+  render() {
+    return (
+      <header class={headerStyles.header}>
+        <a href="/" class={headerStyles.logo}>
+          <img src={logoSVG} alt="Caribbean Language Explorers" />
+        </a>
+        <nav>
+          <ul class={headerStyles.navLinks}>
+            {NAV_LINKS.map(link => (
+              <li key={link.title}>
+                <a href={link.href}>{link.title}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+    );
+  }
+}
