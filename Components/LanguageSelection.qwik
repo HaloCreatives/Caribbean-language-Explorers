@@ -1,0 +1,49 @@
+import { Component, QRL } from 'qwik';
+
+const LanguageSelectionCSS = QRL`./styles/language-selection.scss`;
+
+const LANGUAGE_OPTIONS = [
+  { value: '', label: 'Select a Language' },
+  { value: 'english', label: 'English' },
+  { value: 'spanish', label: 'Spanish' },
+  { value: 'french', label: 'French' },
+  { value: 'haitian-creole', label: 'Haitian Creole' },
+  // Add more options as needed
+];
+
+const DEFAULT_SELECTED_LANGUAGE = '';
+
+export class LanguageSelection extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedLanguage: DEFAULT_SELECTED_LANGUAGE,
+    };
+  }
+
+  handleLanguageChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    this.setState({
+      selectedLanguage: value,
+    });
+  };
+
+  render() {
+    return (
+      <div class={LanguageSelectionCSS}>
+        <h2>Choose a Language</h2>
+        <form>
+          <div class="form-group">
+            <label htmlFor="language">Select a Language:</label>
+            <select id="language" name="language" value={this.state.selectedLanguage} onChange={this.handleLanguageChange}>
+              {LANGUAGE_OPTIONS.map(option => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          </div>
+        </form>
+      </div>
+    );
+  }
+}
