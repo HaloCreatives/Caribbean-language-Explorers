@@ -1,0 +1,19 @@
+{
+    "login": {
+      "title": "Koneksyon",
+      "username": "Antre non itilizatè ak mo modpas ou",
+      "usernamePlaceholder": "Non itilizatè",
+      "password": "Mo modpas",
+      "passwordPlaceholder": "Mo modpas",
+      "loginButton": "Koneksyon"
+    },
+    "dashboard": {
+      "greeting": "Bonjou!",
+      "welcomeMessage": "Byenveni {username}!",
+      "logoutButton": "Dekonekte"
+    },
+    "errors": {
+      "loginFailed": "Koneksyon echwe. Tanpri eseye ankò."
+    }
+  }
+  
