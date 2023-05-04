@@ -1,0 +1,35 @@
+{
+    "login": {
+      "title": "Ini",
+      "username": "Bruja nanga paswudu",
+      "usernamePlaceholder": "Bruja",
+      "password": "Paswudu",
+      "passwordPlaceholder": "Paswudu",
+      "loginButton": "Ini"
+    },
+    "dashboard": {
+      "greeting": "Horo!",
+      "welcomeMessage": "Welkom baka {username}!",
+      "logoutButton": "Kibri sesi"
+    },
+    "errors": {
+      "loginFailed": "Ini no sukses. Probri agen."
+    },
+    "menu": {
+      "home": "Ini sei",
+      "about": "Bout wi",
+      "contact": "Kontak wi"
+    },
+    "profile": {
+      "title": "Profiel",
+      "name": "Naam",
+      "email": "I-meil",
+      "phone": "Telefoon",
+      "saveButton": "Bewaar",
+      "cancelButton": "Kensre"
+    },
+    "success": {
+      "saved": "Opo! Yu profiel na bewaar."
+    }
+  }
+  
