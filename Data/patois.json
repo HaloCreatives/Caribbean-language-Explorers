@@ -1,0 +1,19 @@
+{
+    "login": {
+      "title": "Log In",
+      "username": "Gi mi yuh username an paswud",
+      "usernamePlaceholder": "Username",
+      "password": "Paswud",
+      "passwordPlaceholder": "Paswud",
+      "loginButton": "Log In"
+    },
+    "dashboard": {
+      "greeting": "Wah gwaan!",
+      "welcomeMessage": "Welcome, {username}!",
+      "logoutButton": "Log Out"
+    },
+    "errors": {
+      "loginFailed": "Log In no wok. Try agen."
+    }
+  }
+  
